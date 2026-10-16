@@ -11,14 +11,14 @@
   align-items: center;
   color: color-contrast($primary) !important;
   text-transform: uppercase;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
 .navbar-logo {
-  width: 36px;
-  height: 36px;
+  // Matches the logo size on ilmo.kaplaaki.fi.
+  width: 44px;
+  height: 44px;
   margin-right: 1rem;
   display: if($header-logo, block, none);
 }
