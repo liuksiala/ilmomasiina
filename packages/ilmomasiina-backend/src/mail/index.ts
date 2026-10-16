@@ -24,6 +24,7 @@ export interface ConfirmationMailParams {
   event: Event;
   paymentStatus: SignupPaymentStatus | null;
   cancelLink: string;
+  eventLink: string;
 }
 
 export interface PaymentMailParams {
@@ -65,6 +66,17 @@ function getTemplate(language: string | null, template: string) {
   return { template: defaultPath, lng: config.defaultLanguage };
 }
 
+/** Branding values passed to every email template. */
+function mailBranding() {
+  return {
+    footerText: config.brandingMailFooterText,
+    footerLink: config.brandingMailFooterLink,
+    logoUrl: config.brandingMailLogoUrl,
+    headerText: config.brandingMailHeaderText,
+    color: config.brandingMailColor,
+  };
+}
+
 const TEMPLATE_OPTIONS: Email.EmailConfig = {
   // When printing to console, don't preprocess CSS, as it makes the printouts massive.
   juice: mailTransporter.transporter.name !== "console fallback",
@@ -93,10 +105,7 @@ export default class EmailService {
       const email = new Email(TEMPLATE_OPTIONS);
       const brandedParams = {
         ...params,
-        branding: {
-          footerText: config.brandingMailFooterText,
-          footerLink: config.brandingMailFooterLink,
-        },
+        branding: mailBranding(),
       };
       const { template, lng } = getTemplate(language, "confirmation");
       const html = await email.render(template, brandedParams);
@@ -115,10 +124,7 @@ export default class EmailService {
       const email = new Email(TEMPLATE_OPTIONS);
       const brandedParams = {
         ...params,
-        branding: {
-          footerText: config.brandingMailFooterText,
-          footerLink: config.brandingMailFooterLink,
-        },
+        branding: mailBranding(),
       };
       const { template, lng } = getTemplate(language, "payment");
       const html = await email.render(template, brandedParams);
@@ -135,10 +141,7 @@ export default class EmailService {
       const brandedParams = {
         ...params,
         siteUrl: adminUrl({ lang: language || config.defaultLanguage }),
-        branding: {
-          footerText: config.brandingMailFooterText,
-          footerLink: config.brandingMailFooterLink,
-        },
+        branding: mailBranding(),
       };
       const { template, lng } = getTemplate(language, "newUser");
       const html = await email.render(template, brandedParams);
@@ -155,10 +158,7 @@ export default class EmailService {
       const brandedParams = {
         ...params,
         siteUrl: adminUrl({ lang: language || config.defaultLanguage }),
-        branding: {
-          footerText: config.brandingMailFooterText,
-          footerLink: config.brandingMailFooterLink,
-        },
+        branding: mailBranding(),
       };
       const { template, lng } = getTemplate(language, "resetPassword");
       const html = await email.render(template, brandedParams);
@@ -174,10 +174,7 @@ export default class EmailService {
       const email = new Email(TEMPLATE_OPTIONS);
       const brandedParams = {
         ...params,
-        branding: {
-          footerText: config.brandingMailFooterText,
-          footerLink: config.brandingMailFooterLink,
-        },
+        branding: mailBranding(),
       };
       const { template, lng } = getTemplate(language, "queueMail");
       const html = await email.render(template, brandedParams);

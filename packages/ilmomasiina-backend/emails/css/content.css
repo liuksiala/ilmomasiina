@@ -10,12 +10,6 @@
   font-size: 16px;
 }
 
-.alertText {
-  font-size: 24px;
-  color: #fff;
-  font-weight: 500;
-}
-
 .alert.alert-warning {
   background-color: #ff9f00;
 }
@@ -32,4 +26,9 @@
 .bodyText {
   color: black;
   white-space: pre-line;
+}
+
+.divider {
+  border-top: 1px solid #011e41;
+  margin: 10px 0 20px;
 }

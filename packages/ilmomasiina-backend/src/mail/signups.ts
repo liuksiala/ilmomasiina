@@ -1,7 +1,7 @@
 import moment from "moment-timezone";
 
 import { SignupStatus } from "@tietokilta/ilmomasiina-models";
-import config, { editSignupUrl } from "../config";
+import config, { editSignupUrl, eventDetailsUrl } from "../config";
 import i18n from "../i18n";
 import { Event } from "../models/event";
 import { Payment } from "../models/payment";
@@ -99,6 +99,7 @@ export const sendSignupConfirmationMail = sendSynchronouslyInTest(
       date,
       event,
       cancelLink,
+      eventLink: eventDetailsUrl({ slug: event.slug, lang, frontend: event.preferredFrontend }),
     };
 
     await EmailService.sendConfirmationMail(signup.email, signup.language, params);

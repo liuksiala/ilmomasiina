@@ -120,6 +120,12 @@ const config = {
   brandingMailFooterText: envString("BRANDING_MAIL_FOOTER_TEXT"),
   /** Link shown at the end of emails. */
   brandingMailFooterLink: envString("BRANDING_MAIL_FOOTER_LINK"),
+  /** Public URL of the logo image shown at the top of emails. If unset, the text title is shown instead. */
+  brandingMailLogoUrl: envString("BRANDING_MAIL_LOGO_URL", null),
+  /** Text shown above the logo/title in emails, e.g. "Kaplaakin ilmomasiina". */
+  brandingMailHeaderText: envString("BRANDING_MAIL_HEADER_TEXT", "Ilmomasiina"),
+  /** Color of the band below the email header. */
+  brandingMailColor: envString("BRANDING_MAIL_COLOR", "#011e41"),
   /** Calendar name included in iCalendar exports. */
   icalCalendarName: envString("BRANDING_ICAL_CALENDAR_NAME", "Ilmomasiina"),
   /** Default language for emails, iCalendar exports, and signups for which no language is known. */

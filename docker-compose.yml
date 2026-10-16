@@ -20,6 +20,17 @@ services:
       - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  # Local mail catcher for testing emails. Web UI at http://localhost:8025.
+  # Set SMTP_HOST=mailpit, SMTP_PORT=1025, SMTP_USER/SMTP_PASSWORD to any value in .env.
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: always
+    environment:
+      - MP_SMTP_AUTH_ACCEPT_ANY=true
+      - MP_SMTP_AUTH_ALLOW_INSECURE=true
+    ports:
+      - "8025:8025"
+      - "1025:1025"
   ilmomasiina-dev:
     build:
       context: .
@@ -28,6 +39,7 @@ services:
     restart: always
     depends_on:
       - database
+      - mailpit
     environment:
       - DB_DIALECT=postgres
       - DB_HOST=database

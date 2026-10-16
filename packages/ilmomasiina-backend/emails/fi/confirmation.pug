@@ -14,27 +14,28 @@ block mainContent
         if event.payments == "online"
           |
           | Voit suorittaa maksun #[a(href=cancelLink) ilmoittautumissivulla].
-  if event.verificationEmail
-    div.content-block
-      p.bodyText #{event.verificationEmail}
   if queuePosition
     div.content-block
       p.bodyText #[strong Olet jonossa sijalla #{queuePosition}.] Jos saat paikan jonosta, sinulle lähetetään ilmoitus sähköpostitse.
   div.content-block
-    p.bodyText Tapahtuman tiedot:
-    ul
-      li #[strong Tapahtuma:] #{event.title}
-      li #[strong Sijainti:] #{event.location}
-      if date
-        li #[strong Aika:] #{date}
-  div.content-block
-    p.bodyText Ilmoittautumisesi tiedot:
+    p.bodyText #{type == "edit" ? "Ilmoittautumisesi tietoja on muokattu:" : "Ilmoittautuminen tapahtumaan onnistui:"}
     ul
       if name
         li #[strong Nimi:] #{name}
       li #[strong Sähköposti:] #{email}
       li #[strong Kiintiö:] #{quota}
+      li #[strong Tapahtuma:] #{event.title}
+      if date
+        li #[strong Ajankohta:] #{date}
+      if event.location
+        li #[strong Paikka:] #{event.location}
       each val in answers
         li #[strong #{val.label}:] #{val.answer}
+      li #[strong Linkki tapahtumaan:] #[a(href=eventLink) #{eventLink}]
+  if event.verificationEmail
+    div.content-block
+      p.bodyText #{event.verificationEmail}
   div.content-block
-    p.bodyText Mikäli haluat muokata tai perua ilmoittautumisesi, voit tehdä sen painamalla tätä #[a(href=cancelLink) linkkiä].
+    p.bodyText Voit muokata tietojasi tai poistaa ilmoittautumisesi tämän linkin takaa:
+      br
+      a(href=cancelLink) #{cancelLink}
