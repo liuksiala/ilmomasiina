@@ -6,21 +6,29 @@
 // For Bootstrap components, the overrides are made in ilmomasiina-frontend/src/styles/app.scss.
 // If you want to override more colors, you'll also need to add them to the @use there.
 
-$primary: #011e41 !default;
-$secondary: #011e41 !default;
+// Kaplaaki Brand Book 2024: web primary color #001F3F, lighter blue shades for accents.
+$primary: #001f3f !default;
+$secondary: #364a6f !default;
 $red: #d74949 !default; // further assigned to $danger by Bootstrap
 $green: #319236 !default; // further assigned to $success by Bootstrap
-$text-muted: #888 !default; // uses $secondary by default, but Tietokilta has a dark $secondary
+$text-muted: #697ba3 !default; // uses $secondary by default
 
-// Default button hover color logic doesn't work with Tietokilta's black $primary.
+// Default button hover color logic doesn't work with a very dark $primary.
 // You can disable this if you use something light.
 $lighter-primary-hover: true !default;
 $lighter-secondary-hover: true !default;
 
 // Additional colors, only used by Ilmomasiina's SCSS.
 
-$secondary-background: #f1f1f1 !default;
-$secondary-text-color: #7a7a7a !default;
+$secondary-background: #eef1f8 !default;
+$secondary-text-color: #4f6289 !default;
+
+// Kaplaaki brand shades (Brand Book 2024).
+$kaplaaki-blue-1: #364a6f;
+$kaplaaki-blue-2: #4f6289;
+$kaplaaki-blue-3: #697ba3;
+$kaplaaki-blue-4: #8395be;
+$kaplaaki-blue-5: #9dafda;
 
 // If you don't want a header logo, set this to false.
 $header-logo: true !default;

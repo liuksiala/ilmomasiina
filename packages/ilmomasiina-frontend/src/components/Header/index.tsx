@@ -4,7 +4,7 @@ import { Button, Container, Navbar } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import branding from "../../branding";
 import i18n from "../../i18n";
 import paths from "../../paths";
@@ -24,7 +24,7 @@ const Header = () => {
     <Navbar>
       <Container className="gap-sm-2">
         <Link to={paths.eventsList} className="navbar-brand">
-          <img className="navbar-logo" src={logo} alt="Logo" />
+          <img className="navbar-logo" src={logo} alt="Kaplaaki" />
           <span className="d-none d-sm-inline">{branding.headerTitle}</span>
           <span className="d-sm-none">{branding.headerTitleShort}</span>
         </Link>

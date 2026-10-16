@@ -4,7 +4,7 @@
 ------------------------------------- */
 * {
   margin: 0;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   font-size: 14px;
 }
@@ -95,8 +95,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  color: #000;
+  font-family: 'Roboto Slab', Georgia, serif;
+  color: #001f3f;
   margin: 40px 0 0;
   line-height: 1.2em;
   font-weight: 400;
@@ -143,15 +143,15 @@ ol li {
     LINKS & BUTTONS
 ------------------------------------- */
 a {
-  color: #1a5fb4;
+  color: #364a6f;
   text-decoration: underline;
 }
 
 .btn-primary {
   text-decoration: none;
   color: #fff;
-  background-color: #348eda;
-  border: solid #348eda;
+  background-color: #001f3f;
+  border: solid #001f3f;
   border-width: 10px 20px;
   line-height: 2em;
   /* 2em * 14px = 28px, use px to get airier line-height also in Thunderbird, and Yahoo!, Outlook.com, AOL webmail clients */

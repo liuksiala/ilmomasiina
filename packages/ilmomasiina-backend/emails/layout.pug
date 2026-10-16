@@ -4,7 +4,7 @@ html(lang='fi', xmlns='http://www.w3.org/1999/xhtml')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
 		title #{branding.headerText}
-		link(href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap' rel='stylesheet')
 		link(href='base.css', rel='stylesheet', data-inline='data-inline')
 		link(href='header.css', rel='stylesheet', data-inline='data-inline')
 		link(href='footer.css' rel='stylesheet' data-inline='data-inline')
@@ -21,7 +21,7 @@ html(lang='fi', xmlns='http://www.w3.org/1999/xhtml')
 							td.header-logo
 								block headerContent
 									if branding.logoUrl
-										img.logo(src=branding.logoUrl, alt=branding.headerText, width='200')
+										img.logo(src=branding.logoUrl, alt=branding.headerText, width='120')
 									else
 										h1.headerTitle #{branding.headerText}
 						//- Colored band under the header, like the website's navbar

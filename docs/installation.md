@@ -20,7 +20,7 @@ build your own Docker image (if using Docker):
 |-|-|
 | Hosting in a subfolder instead of directly at `https://ilmo.your.domain/` | build args |
 | Colors | [`packages/ilmomasiina-frontend/src/styles/_definitions.scss`](../packages/ilmomasiina-frontend/src/styles/_definitions.scss) |
-| Header logo | `packages/ilmomasiina-frontend/src/assets/logo.svg` (can also be disabled from `_definitions.scss`) |
+| Header logo | `packages/ilmomasiina-frontend/src/assets/logo.png` (can also be disabled from `_definitions.scss`) |
 | Favicon | `packages/ilmomasiina-frontend/public/*.png` |
 | Header title | build args or [`packages/ilmomasiina-frontend/src/branding.ts`](../packages/ilmomasiina-frontend/src/branding.ts) |
 | Footer links | build args or [`packages/ilmomasiina-frontend/src/branding.ts`](../packages/ilmomasiina-frontend/src/branding.ts) |

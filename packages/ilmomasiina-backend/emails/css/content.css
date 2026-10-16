@@ -20,7 +20,7 @@
   background-color: #79b654;
 }
 .alert.alert-neutral {
-  background-color: #0a0d10;
+  background-color: #001f3f;
 }
 
 .bodyText {
@@ -29,6 +29,6 @@
 }
 
 .divider {
-  border-top: 1px solid #011e41;
+  border-top: 1px solid #001f3f;
   margin: 10px 0 20px;
 }
