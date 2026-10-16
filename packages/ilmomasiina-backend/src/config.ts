@@ -124,8 +124,8 @@ const config = {
   brandingMailLogoUrl: envString("BRANDING_MAIL_LOGO_URL", null),
   /** Text shown above the logo/title in emails, e.g. "Kaplaakin ilmomasiina". */
   brandingMailHeaderText: envString("BRANDING_MAIL_HEADER_TEXT", "Ilmomasiina"),
-  /** Color of the band below the email header. */
-  brandingMailColor: envString("BRANDING_MAIL_COLOR", "#001f3f"),
+  /** Color of the band below the email header. Must be quoted in .env, since an unquoted # starts a comment. */
+  brandingMailColor: envString("BRANDING_MAIL_COLOR", "") || "#001f3f",
   /** Calendar name included in iCalendar exports. */
   icalCalendarName: envString("BRANDING_ICAL_CALENDAR_NAME", "Ilmomasiina"),
   /** Default language for emails, iCalendar exports, and signups for which no language is known. */
